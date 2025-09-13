@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Technologies - Premier CAD Training Institute in Madurai</title>
+    
+    <!-- Favicon for browser tab -->
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="https://imagur.org/i/KoFDCIz6">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="https://imagur.org/i/KoFDCIz6">
+    <link rel="icon" type="image/jpeg" sizes="48x48" href="https://imagur.org/i/KoFDCIz6">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://imagur.org/i/KoFDCIz6">
+    <link rel="shortcut icon" href="https://imagur.org/i/KoFDCIz6">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #0a0a0a;
+            --bg-tertiary: #111111;
+            --bg-card: #1a1a1a;
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --accent-primary: #00d4ff;
+            --accent-secondary: #ff006e;
+            --accent-success: #00ff94;
+            --accent-warning: #ffb800;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --text-muted: #666666;
+            --border-primary: rgba(0, 212, 255, 0.2);
+            --border-secondary: rgba(255, 255, 255, 0.1);
+            --shadow-glow: 0 0 50px rgba(0, 212, 255, 0.3);
+            --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 110, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(0, 255, 148, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            animation: backgroundPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes backgroundPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--accent-primary), var(--accent-secondary));
+            border-radius: 4px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border-primary);
+            color: var(--text-primary);
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .header-glass {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                rgba(0, 212, 255, 0.1) 0%, 
+                rgba(255, 0, 110, 0.1) 50%, 
+                rgba(0, 212, 255, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        header:hover .header-glass {
+            opacity: 1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            margin-right: 12px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-glow);
+            position: relative;
+            overflow: hidden;
+            padding: 4px;
+        }
+
+        .logo-icon img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: white;
+            padding: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 32px;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+            opacity: 0.2;
+            transition: left 0.5s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid var(--border-primary);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a:hover::before {
+            left: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--bg-glass);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 200px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+                linear-gradient(225deg, rgba(255, 0, 110, 0.15) 0%, transparent 50%);
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: particleFloat 15s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: heroSlideIn 1s ease 0.5s forwards;
+            background: linear-gradient(135deg, 
+                var(--accent-primary) 0%, 
+                var(--accent-secondary) 50%, 
+                var(--accent-success) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: heroSlideIn 1s ease 0.7s forwards;
+            color: var(--text-secondary);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: heroSlideIn 1s ease 0.9s forwards;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid var(--border-secondary);
+        }
+
+        .hero-stat span {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .hero-stat p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: heroSlideIn 1s ease 1.1s forwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-primary);
+            border: 2px solid var(--accent-primary);
+            box-shadow: 0 0 32px rgba(0, 212, 255, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 212, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 32px;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+            border: 1px solid var(--border-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(0, 212, 255, 0.1), 
+                rgba(255, 0, 110, 0.05),
+                rgba(0, 255, 148, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5);
+            border-color: var(--border-primary);
+        }
+
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: var(--shadow-glow);
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 120px 0;
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .course-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            color: var(--text-primary);
+            padding: 3rem;
+            border-radius: 32px;
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-secondary);
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .course-card:hover::before {
+            left: 100%;
+        }
+
+        .course-card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-card);
+            border-color: var(--border-primary);
+        }
+
+        .course-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        .course-card p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .course-card ul {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .course-card ul li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .course-card ul li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            color: var(--accent-success);
+            font-weight: bold;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(255, 0, 110, 0.1) 0%, transparent 50%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            padding: 3rem 2rem;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-radius: 32px;
+            border: 1px solid var(--border-primary);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--accent-primary) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.1;
+            animation: statsPattern 20s linear infinite;
+        }
+
+        @keyframes statsPattern {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-primary);
+        }
+
+        .stat-item h3 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            opacity: 0;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        .contact-info {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 32px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-secondary);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 3rem;
+            color: var(--accent-primary);
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            border: 1px solid var(--border-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .contact-item:hover::before {
+            left: 100%;
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 212, 255, 0.05);
+            transform: translateX(8px);
+            border-color: var(--border-primary);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-glow);
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-item h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-item p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .contact-item a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-success);
+            text-shadow: 0 0 10px rgba(0, 255, 148, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            padding: 80px 0 40px;
+            text-align: center;
+            border-top: 1px solid var(--border-primary);
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p, .footer-section li {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-primary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 20px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-glow);
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 16px 48px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Animations */
+        @keyframes heroSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                border-top: 1px solid var(--border-primary);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features-grid,
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-glass"></div>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="https://imagur.org/i/KoFDCIz6" alt="Future Technologies Logo">
+                </div>
+                <span>Future Technologies</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Future Technologies</h1>
+                <p class="hero-subtitle">Premier CAD Training Institute in Madurai</p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span>⭐ 4.8</span>
+                        <p>Rating</p>
+                    </div>
+                    <div class="hero-stat">
+                        <span>20+</span>
+                        <p>Years Excellence</p>
+                    </div>
+                    <div class="hero-stat">
+                        <span>1500+</span>
+                        <p>Students Trained</p>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="#courses" class="btn btn-primary">
+                        <span>🚀</span>
+                        Explore Courses
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>💬</span>
+                        Get Started Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Choose Future Technologies?</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Expert Training</h3>
+                    <p>Learn from industry professionals with 20+ years of experience in CAD design and engineering. Our instructors bring real-world expertise to every lesson.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">💻</div>
+                    <h3>Modern Facilities</h3>
+                    <p>State-of-the-art computer lab with latest CAD software and high-performance workstations. Every student gets access to professional-grade tools.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Corporate Training</h3>
+                    <p>Specialized corporate training programs designed for professionals and organizations looking to upskill their workforce in CAD technologies.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📚</div>
+                    <h3>Comprehensive Curriculum</h3>
+                    <p>Complete coverage of Architectural CAD, Mechanical CAD, and advanced design techniques with hands-on projects and real-world applications.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Industry Certification</h3>
+                    <p>Industry-recognized certificates to boost your career prospects and professional credibility. Our certifications are valued by top employers.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Job Assistance</h3>
+                    <p>Placement support and career guidance to help you land your dream job in the design industry. We maintain strong industry connections.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Premium Courses</h2>
+            <div class="courses-grid">
+                <div class="course-card fade-in">
+                    <h3 class="course-title">🏗️ Architectural CAD</h3>
+                    <p>Master architectural design with AutoCAD, 3D modeling, building plans, and construction drawings. Perfect for architects and civil engineers looking to excel in design.</p>
+                    <ul>
+                        <li>2D Drafting & Technical Drawing</li>
+                        <li>3D Modeling & Visualization</li>
+                        <li>Building Information Modeling (BIM)</li>
+                        <li>Construction Documentation</li>
+                        <li>Site Planning & Layout Design</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="course-card fade-in">
+                    <h3 class="course-title">⚙️ Mechanical CAD</h3>
+                    <p>Learn mechanical design fundamentals, part modeling, assembly design, and technical drawings for manufacturing industries and product development.</p>
+                    <ul>
+                        <li>Part Design & 3D Modeling</li>
+                        <li>Assembly Design & Animation</li>
+                        <li>Technical Drawings & GD&T</li>
+                        <li>Manufacturing Processes</li>
+                        <li>Finite Element Analysis (FEA)</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="course-card fade-in">
+                    <h3 class="course-title">💡 Advanced CAD</h3>
+                    <p>Advanced techniques in CAD design, parametric modeling, simulation, and industry-specific applications for experienced professionals seeking specialization.</p>
+                    <ul>
+                        <li>Parametric Design & Optimization</li>
+                        <li>Simulation & Analysis</li>
+                        <li>Advanced Rendering & Visualization</li>
+                        <li>Industry-Specific Applications</li>
+                        <li>Automation & Customization</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="1500">0</h3>
+                    <p>Students Trained</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="20">0</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="95">0</h3>
+                    <p>Success Rate %</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="50">0</h3>
+                    <p>Corporate Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <div class="contact-info fade-in">
+                <h3>Contact Information</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <h4>Email Address</h4>
+                        <p><a href="mailto:futuretechmdu@gmail.com">futuretechmdu@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <h4>Admin Contact</h4>
+                        <p><a href="tel:+919585440104">+91 95854 40104</a></p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Primary contact for admissions</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h4>Manager Contact</h4>
+                        <p><a href="tel:+919087304082">+91 90873 04082</a></p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Course inquiries & support</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p><a href="https://wa.me/919585440104">Chat with Admin</a></p>
+                        <p><a href="https://wa.me/919087304082">Chat with Manager</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Our Location</h4>
+                        <p>SKV Complex, 4th Floor<br>
+                        Ellis Nagar, Apple Hotel Opposite<br>
+                        94/15, Sathyamoorthy Nagar<br>
+                        Ellis Nagar, Madurai - 625016</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div>
+                        <h4>Working Hours</h4>
+                        <p>Monday to Saturday<br>
+                        Open until 8:30 PM<br>
+                        <span style="color: var(--accent-success);">Currently Open</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Future Technologies</h3>
+                    <p>Premier CAD Training Institute in Madurai, providing industry-leading education and professional development since 2005. Empowering the next generation of designers and engineers with 20 years of excellence.</p>
+                    <div class="social-links">
+                        <a href="mailto:futuretechmdu@gmail.com" class="social-link" title="Email us">📧</a>
+                        <a href="tel:+919585440104" class="social-link" title="Call Admin">📱</a>
+                        <a href="https://wa.me/919585440104" class="social-link" title="WhatsApp">💬</a>
+                        <a href="#" class="social-link" title="Website">🌐</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Our Courses</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#contact">Admissions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Courses</h3>
+                    <ul>
+                        <li>🏗️ Architectural CAD</li>
+                        <li>⚙️ Mechanical CAD</li>
+                        <li>💡 Advanced CAD</li>
+                        <li>🏢 Corporate Training</li>
+                        <li>🎓 Certification Programs</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Details</h3>
+                    <p>📧 <a href="mailto:futuretechmdu@gmail.com">futuretechmdu@gmail.com</a></p>
+                    <p>📱 <a href="tel:+919585440104">+91 95854 40104</a> (Admin)</p>
+                    <p>📞 <a href="tel:+919087304082">+91 90873 04082</a> (Manager)</p>
+                    <p>🕒 Open until 8:30 PM (Mon-Sat)</p>
+                    <p>📍 Ellis Nagar, Madurai - 625016</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid var(--border-secondary); padding-top: 2rem; margin-top: 3rem;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    &copy; 2025 Future Technologies. All rights reserved. | 
+                    Designed with ❤️ for excellence in CAD education
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.querySelector('.hero-particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize particles
+        createParticles();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '☰';
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.stat-number');
+        let animated = false;
+
+        const countAnimation = (counter) => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    counter.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current);
+                }
+            }, 16);
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    counters.forEach((counter, index) => {
+                        setTimeout(() => {
+                            counter.style.animation = 'heroSlideIn 0.5s ease forwards';
+                            setTimeout(() => countAnimation(counter), 200);
+                        }, index * 200);
+                    });
+                }
+            });
+        });
+
+        if (counters.length > 0) {
+            statsObserver.observe(counters[0].closest('.stats'));
+        }
+
+        // Header scroll effect
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.98)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.8)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            }
+            
+            // Hide/show header based on scroll direction
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+
+        // Enhanced hover effects
+        document.querySelectorAll('.feature-card, .course-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-20px) scale(1.02)';
+                this.style.zIndex = '10';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.zIndex = '1';
+            });
+        });
+
+        // Add interactive cursor effect
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.cursor');
+            if (!cursor) {
+                const newCursor = document.createElement('div');
+                newCursor.className = 'cursor';
+                newCursor.style.cssText = `
+                    position: fixed;
+                    width: 20px;
+                    height: 20px;
+                    background: radial-gradient(circle, var(--accent-primary), transparent);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 9999;
+                    opacity: 0.6;
+                    transition: transform 0.1s ease;
+                `;
+                document.body.appendChild(newCursor);
+            }
+            
+            const cursor_element = document.querySelector('.cursor');
+            cursor_element.style.left = e.clientX - 10 + 'px';
+            cursor_element.style.top = e.clientY - 10 + 'px';
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = scrolled * 0.3;
+            
+            document.querySelector('.hero-bg').style.transform = `translateY(${parallax}px)`;
+        });
+
+        // Performance optimization: Reduce animations on mobile
+        const isMobile = window.innerWidth < 768;
+        if (isMobile) {
+            document.documentElement.style.setProperty('--animation-duration', '0.3s');
+        }
+    </script>
+</body>
+</html>
